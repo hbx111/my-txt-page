@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offsets</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      padding: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .keyword { color: #ff7b72; }
+    .type { color: #79c0ff; }
+    .name { color: #d2a8ff; }
+    .value { color: #a5d6ff; }
+    .comment { color: #8b949e; }
+    .hex { color: #ffa657; }
+    .punct { color: #c9d1d9; }
+  </style>
+</head>
+<body>
+<pre id="content"></pre>
+<script>
+fetch('content.txt')
+  .then(r => r.text())
+  .then(text => {
+    const lines = text.split('\n');
+    const el = document.getElementById('content');
+    el.innerHTML = lines.map(line => {
+      if (line.trim() === '') return line;
+      // 注释行
+      if (line.trim().startsWith('//')) return `<span class="comment">${esc(line)}</span>`;
+      // constexpr 行
+      return line.replace(
+        /^(constexpr\s+)(uint64_t|int|float|double|bool|char)\s+(\w+)(\s*=\s*)(0x[0-9a-fA-F]+|\d+|"[^"]*")(.*)$/,
+        (_, kw, type, name, eq, val, rest) =>
+          `<span class="keyword">${esc(kw)}</span><span class="type">${esc(type)}</span> <span class="name">${esc(name)}</span><span class="punct">${esc(eq)}</span><span class="hex">${esc(val)}</span>${esc(rest)}`
+      );
+    }).join('\n');
+  })
+  .catch(() => document.getElementById('content').textContent = '加载失败');
+
+function esc(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>
