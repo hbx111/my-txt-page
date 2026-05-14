@@ -2,9 +2,9 @@
 CIndexCode = 8bd18bc181f20000000735240f3607c1ea0783f124c1c81781e20000ff01c1e1190bd133c23505ec21b6c3cccccccccc
 
 
-constexpr uint64_t XenuineDecrypt = 0x1099FF28;
+constexpr uint64_t XenuineDecrypt = 0x1099FE28;
 constexpr uint64_t UWorld = 0x12496C38;
-constexpr uint64_t GNames = 0x1272A460;
+constexpr uint64_t GNames = 0x1272A470;
 constexpr uint64_t GNamesPtr = 0x10;
 constexpr uint64_t ChunkSize = 0x3E4C;
 constexpr uint64_t GObjects = 0x12457870;
@@ -199,10 +199,10 @@ constexpr uint64_t Gender = 0xB48;
 constexpr uint64_t MouseX = 0x4C8F;
 constexpr uint64_t MouseY = 0x4C90;
 
-constexpr uint64_t SPOOFCALL = 0x22DA275;
-constexpr uint64_t LineTraceSingle = 0xC566340;
+constexpr uint64_t SPOOFCALL = 0x22DA295;
+constexpr uint64_t LineTraceSingle = 0xC5663E8;
 constexpr uint64_t HOOK = 0x11D1C8F8;
-constexpr uint64_t HOOK_TWO = 0xCF59E27;
+constexpr uint64_t HOOK_TWO = 0xCF59EDB;
 
 constexpr uint64_t InventoryFacade = 0x17A8;
 constexpr uint64_t Inventory = 0x400;
