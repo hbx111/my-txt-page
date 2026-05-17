@@ -2,9 +2,9 @@
 CIndexCode = 8bd18bc181f20000000735240f3607c1ea0783f124c1c81781e20000ff01c1e1190bd133c23505ec21b6c3cccccccccc
 
 
-constexpr uint64_t XenuineDecrypt = 0x1099FE28;
-constexpr uint64_t UWorld = 0x12496C38;
-constexpr uint64_t GNames = 0x1272A470;
+constexpr uint64_t XenuineDecrypt = 0x109A1328;
+constexpr uint64_t UWorld = 0x12498C38;
+constexpr uint64_t GNames = 0x1272C470;
 constexpr uint64_t GNamesPtr = 0x10;
 constexpr uint64_t ChunkSize = 0x3E4C;
 constexpr uint64_t GObjects = 0x12457870;
@@ -222,7 +222,7 @@ constexpr uint64_t VehicleFuelMax = 0x2E4;
 constexpr uint64_t VehicleHealth = 0x2D8;
 constexpr uint64_t VehicleHealthMax = 0x2DC;
 
-constexpr uint64_t PhysxSDK = 0x11DC7948;
+constexpr uint64_t PhysxSDK = 0x11DC9948;
 constexpr uint64_t PhysicsScene = 0x3A0;
 constexpr uint64_t mPhysXScene = 0xD0;
 constexpr uint64_t rigid_dynamics = 0x3B98;
